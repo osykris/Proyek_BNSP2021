@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class arsip_surat extends Model
 {
-    protected $table = 'spareparts';
+    protected $table = 'arsip_surats';
     protected $guarded = array();
 
     public function category()

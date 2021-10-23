@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Arsip') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -105,7 +105,7 @@
             <div class="row">
                 <div class="col">
                     <p class="footernote">
-                        Connect with Aneka Motor Wlingi
+                        Connect with Arsip Surat
                     </p>
                     <p>
                         <a href="#" class="social-item"><span class="fab fa-whatsapp"></span></a>
