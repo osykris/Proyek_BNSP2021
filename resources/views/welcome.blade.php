@@ -25,7 +25,7 @@
 
 <body class="antialiased">
     <div class="limiter">
-        <div class="container-login100" style="background-image: url(images/getstarted.jpeg);">
+        <div class="container-login100" style="background-image: url(images/getstarted.jpg);">
             <div class="container">
                 <div class="row intro-text align-items-center justify-content-center">
                     <div class="col-md-10 animated tada">
