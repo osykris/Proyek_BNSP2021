@@ -90,21 +90,4 @@
             </div>
         </div>
     </div><br><br><br>
-    <script>
-        $('#kategoris').select2({
-            ajax: {
-                url: 'http://larashop.test/ajax/categories/search',
-                processResults: function(data) {
-                    return {
-                        results: data.map(function(item) {
-                            return {
-                                id: item.id,
-                                text: item.name
-                            }
-                        })
-                    }
-                }
-            }
-        });
-    </script>
 @endsection

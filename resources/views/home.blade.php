@@ -57,10 +57,10 @@
                                     <form action="{{ url('home/arsip') }}/{{ $arsip->id }}" method="post">
                                         @csrf
                                         {{ method_field('DELETE') }}
-                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus arsip ini?');">Hapus</button>
+                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus arsip ini?');">Hapus</button><br>
                                     </form>
-                                    <button class="btn" style="background: yellow" href="#">Unduh</button>
-                                    <button class="btn btn-info " href="/lihat">Lihat >> </button><br></br>
+                                    <a class="btn" style="background: yellow" href="{{ url('home/unduh') }}/{{ $arsip->id }}" onclick="return confirm('Yakin ingin mendownload file ini?');">Unduh</a>
+                                    <a class="btn btn-info " href="{{ url('home/lihat') }}/{{ $arsip->id }}">Lihat >> </a><br></br>
                                     </td>
                                 </tr>
                                 @endforeach

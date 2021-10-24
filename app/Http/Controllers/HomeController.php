@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\kategori;
 use App\Models\arsip_surat;
+use Illuminate\Support\Facades\Storage;
 use Auth;
 use Yajra\DataTables\Facades\DataTables;
 use Illuminate\Support\Facades\Validator;
@@ -66,17 +67,24 @@ class HomeController extends Controller
 
     public function indexEdit($id)
     {
+        $kategoris = kategori::all();
         $arsip = arsip_surat::where('id', $id)->first();
-        return view('editData', compact('arsip'));
+        return view('editData', compact('arsip', 'kategoris'));
+    }
+
+    public function lihat($id)
+    {
+        $arsips = arsip_surat::where('id', $id)->get();
+        return view('lihat', compact('arsips'));
     }
 
     public function save(Request $request, $id)
     {
         $arsip = arsip_surat::findOrFail($id);
         $arsip->nomor_surat = $request->nomor_surat;
-        $arsip->kategori_id = $request->kategori_id;
+        $arsip->kategori_name = $request->kategori_name;
         $arsip->judul = $request->judul;
-        $file = $request->file('pdf');
+        $file = $request->file('file_surat');
         // Mendapatkan Nama File
         $nama_file = $file->getClientOriginalName();
 
@@ -89,7 +97,7 @@ class HomeController extends Controller
         // Proses Upload File
         $destinationPath = 'uploads';
         $file->move($destinationPath, $file->getClientOriginalName());
-        $arsip->picture = $nama_file;
+        $arsip->file_surat = $nama_file;
 
         $arsip->update();
         alert()->success('Data arsip berhasil diedit');
@@ -112,5 +120,12 @@ class HomeController extends Controller
             'kategoris' => kategori::all()
         ]);
 
+    }
+
+    public function unduh($id){
+        $dl = arsip_surat::find($id);
+        $path = public_path('uploads/' . $dl->file_surat);
+        // return Storage::download($path);
+        return response()->download($path);
     }
 }

@@ -29,3 +29,4 @@ Route::get('cari', 'App\Http\Controllers\HomeController@cari');
 Route::get('about', 'App\Http\Controllers\AboutController@index');
 Route::post('about', 'App\Http\Controllers\AboutController@update');
 Route::get('home/lihat/{id}', 'App\Http\Controllers\HomeController@lihat');
+Route::get('home/unduh/{id}', 'App\Http\Controllers\HomeController@unduh');
