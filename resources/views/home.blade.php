@@ -58,9 +58,9 @@
                                         @csrf
                                         {{ method_field('DELETE') }}
                                         <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus arsip ini?');">Hapus</button>
-                                        <button class="btn btn-sm" style="background: yellow" href="url('home/arsip/edit/') }}/{{ $arsip->id }}">Unduh</button>
-                                        <button class="btn btn-info " href="#">Lihat >> </button><br></br>
                                     </form>
+                                    <button class="btn" style="background: yellow" href="#">Unduh</button>
+                                    <button class="btn btn-info " href="/lihat">Lihat >> </button><br></br>
                                     </td>
                                 </tr>
                                 @endforeach
