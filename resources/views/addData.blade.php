@@ -60,7 +60,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="file_name" class="col-md-2 col-form-label text-md-right">Photo</label>
+                        <label for="file_name" class="col-md-2 col-form-label text-md-right">File Surat</label>
 
                         <div class="col-md-6">
                             <input value="Browse File" placeholder="Masukkan File PDF.."
