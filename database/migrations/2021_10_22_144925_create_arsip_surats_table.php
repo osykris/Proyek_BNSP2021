@@ -18,6 +18,7 @@ class CreateArsipSuratsTable extends Migration
             $table->string('nomor_surat');
             $table->integer('kategori_id')->unsigned();
             $table->foreign('kategori_id')->references('id')->on('kategoris')->onDelete('cascade')->onUpdate('cascade');
+            $table->string('kategori_name');
             $table->string('judul');
             $table->string('file_surat');
             $table->timestamps();
